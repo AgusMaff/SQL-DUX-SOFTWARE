@@ -5,7 +5,7 @@ DROP VIEW Ventas;
 CREATE VIEW Ventas AS 
 SELECT id_cliente, MONTH(fecha) AS mes, YEAR(fecha) AS ano, SUM(cantidad) AS cantidad
 FROM venta
-GROUP BY id_cliente, mes;
+GROUP BY id_cliente, mes, ano;
 
 SELECT cliente.nombre, Ventas.cantidad, Ventas.mes
 FROM cliente INNER JOIN Ventas
